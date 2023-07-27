@@ -7,11 +7,10 @@ let num2 = '';
 let operator = '';
 
 // arrow functions
-let add = (a, b) => a + b;
-let subtract = (a, b) => a - b;
-let multiply = (a, b) => (a * b) * 10 / 10;
-let divide = (a, b) => (a / b) * 10 / 10;
-let percent = (a) => (a/100) * 10 / 10;
+let add = (a, b) => (a + b);
+let subtract = (a, b) => (a - b);
+let multiply = (a, b) => ((a * b) * 10 / 10);
+let divide = (a, b) => ((a / b) * 10 / 10);
 
 function operate(a, op, b){
     a = +a;
@@ -21,7 +20,6 @@ function operate(a, op, b){
         case '-': return subtract(a, b);
         case '*': return multiply(a, b);
         case '/': return divide(a, b);
-        case '%': return percent(a);
         default:  return "ERROR";
     }
 }
@@ -29,10 +27,6 @@ function operate(a, op, b){
 function examine(value){
     if (value === 'AC'){
         resetValues();
-    } else if (value === 'C') {
-
-    } else if (value === '%') {
-        
     } else if(isDigit(value) || value === '.') {
         if(operator === '') {  
             num1 = num1 + value;
